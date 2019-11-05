@@ -1,0 +1,10 @@
+{application,nerves_time,
+             [{applications,[kernel,stdlib,elixir,logger,muontrap]},
+              {description,"Keep time in sync on Nerves devices"},
+              {modules,['Elixir.NervesTime','Elixir.NervesTime.Application',
+                        'Elixir.NervesTime.FileTime','Elixir.NervesTime.Ntpd',
+                        'Elixir.NervesTime.Ntpd.State',
+                        'Elixir.NervesTime.SaneTime']},
+              {registered,[]},
+              {vsn,"0.3.2"},
+              {mod,{'Elixir.NervesTime.Application',[]}}]}.

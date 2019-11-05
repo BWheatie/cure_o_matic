@@ -1,0 +1,9 @@
+{application,cure_o_matic,
+             [{applications,[kernel,stdlib,elixir,logger,runtime_tools,
+                             ring_logger,shoehorn,nerves_dht,nerves_runtime,
+                             toolshed,nerves_init_gadget,cure_o_matic_scenic]},
+              {description,"cure_o_matic"},
+              {modules,['Elixir.CureOMatic','Elixir.CureOMatic.Application']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.CureOMatic.Application',[]}}]}.

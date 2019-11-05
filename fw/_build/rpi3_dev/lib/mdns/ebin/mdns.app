@@ -1,0 +1,12 @@
+{application,mdns,
+             [{applications,[kernel,stdlib,elixir,logger,dns]},
+              {description,"A simple mDNS (zeroconf, bonjour) server and client for device discovery on your local network.\n"},
+              {modules,['Elixir.Mdns','Elixir.Mdns.Client',
+                        'Elixir.Mdns.Client.Device',
+                        'Elixir.Mdns.Client.State','Elixir.Mdns.EventManager',
+                        'Elixir.Mdns.Server','Elixir.Mdns.Server.Service',
+                        'Elixir.Mdns.Server.State','Elixir.Mdns.Supervisor']},
+              {registered,[]},
+              {vsn,"1.0.3"},
+              {mod,{'Elixir.Mdns',[]}},
+              {env,[{port,5353}]}]}.

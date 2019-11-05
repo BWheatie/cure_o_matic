@@ -1,0 +1,9 @@
+{application,cure_o_matic_scenic,
+             [{applications,[kernel,stdlib,elixir,scenic,
+                             scenic_driver_nerves_rpi]},
+              {description,"cure_o_matic_scenic"},
+              {modules,['Elixir.CureOMaticScenic',
+                        'Elixir.CureOMaticScenic.Scene.Home']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.CureOMaticScenic',[]}}]}.
