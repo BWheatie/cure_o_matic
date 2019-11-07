@@ -6,15 +6,11 @@ defmodule CureOMatic.Application do
   use Application
 
   def start(_type, _args) do
-    import Supervisor.Spec, warn: false
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: CureOMatic.Supervisor]
-    pin = Application.get_env(:cure_o_matic, :pin)
-    sensor = Application.get_env(:cure_o_matic, :sensor)
-    # Define workers and child supervisors to be supervised
+
     children = [
-      worker(CureOMatic, [{pin, sensor}, [name: CureOMatic]])
     ] ++ children(target())
 
     Supervisor.start_link(children, opts)
@@ -30,7 +26,10 @@ defmodule CureOMatic.Application do
   end
 
   def children(_target) do
+    pin = Application.get_env(:cure_o_matic, :pin)
+    sensor = Application.get_env(:cure_o_matic, :sensor)
     [
+      {CureOMatic.Sensor, {pin, sensor}}
       # Children for all targets except host
       # Starts a worker by calling: CureOMatic.Worker.start_link(arg)
       # {CureOMatic.Worker, arg},

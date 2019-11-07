@@ -43,12 +43,12 @@ defmodule CureOMatic.MixProject do
       {:shoehorn, "~> 0.6"},
       {:ring_logger, "~> 0.6"},
       {:toolshed, "~> 0.2"},
+      {:cure_o_matic_scenic, path: "../ui"},
 
       # Dependencies for all targets except :host
-      {:nerves_dht, "~> 0.1"},
       {:nerves_runtime, "~> 0.6", targets: @all_targets},
       {:nerves_init_gadget, "~> 0.4", targets: @all_targets},
-      {:cure_o_matic_scenic, path: "../ui"},
+      {:nerves_dht, "~> 0.1.1", targets: :rpi3, path: "../../nerves_dht"},
 
       # Dependencies for specific targets
       {:nerves_system_rpi, "~> 1.8", runtime: false, targets: :rpi},
