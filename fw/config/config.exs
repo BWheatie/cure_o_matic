@@ -10,6 +10,21 @@ config :cure_o_matic,
   pin: 4,
   sensor: 22
 
+config :cure_o_matic_scenic, :viewport, %{
+  name: :main_viewport,
+  size: {700, 600},
+  default_scene: {CureOMaticScenic.Scene.Home, nil},
+  drivers: [
+    %{
+      module: Scenic.Driver.Glfw,
+      name: :glfw,
+      opts: [resizeable: false, title: "cure_o_matic_scenic"]
+    },
+    %{
+      module: Scenic.Driver.Nerves.Rpi
+    }
+  ]
+}
 # Customize non-Elixir parts of the firmware. See
 # https://hexdocs.pm/nerves/advanced-configuration.html for details.
 
@@ -27,17 +42,6 @@ config :shoehorn,
 # Use Ringlogger as the logger backend and remove :console.
 # See https://hexdocs.pm/ring_logger/readme.html for more information on
 # configuring ring_logger.
-
-config :cure_o_matic_scenic, :viewport, %{
-  name: :main_viewport,
-  size: {700, 600},
-  default_scene: {CureOMaticScenic.Scene.Home, nil},
-  drivers: [
-    %{
-      module: Scenic.Driver.Nerves.Rpi
-    }
-  ]
-}
 
 config :logger, backends: [RingLogger]
 

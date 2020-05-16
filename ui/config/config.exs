@@ -12,6 +12,9 @@ config :cure_o_matic_scenic, :viewport, %{
       module: Scenic.Driver.Glfw,
       name: :glfw,
       opts: [resizeable: false, title: "cure_o_matic_scenic"]
+    },
+    %{
+      module: Scenic.Driver.Nerves.Rpi
     }
   ]
 }

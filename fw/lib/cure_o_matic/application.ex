@@ -29,7 +29,7 @@ defmodule CureOMatic.Application do
     pin = Application.get_env(:cure_o_matic, :pin)
     sensor = Application.get_env(:cure_o_matic, :sensor)
     [
-      {CureOMatic.Sensor, {pin, sensor}}
+      {CureOMatic.Sensor, {pin, sensor}, [name: :temp_sensor]}
       # Children for all targets except host
       # Starts a worker by calling: CureOMatic.Worker.start_link(arg)
       # {CureOMatic.Worker, arg},

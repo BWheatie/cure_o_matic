@@ -25,7 +25,8 @@ defmodule CureOMaticScenic.MixProject do
     [
       {:scenic, "~> 0.10"},
       {:scenic_driver_glfw, "~> 0.10", targets: :host},
-      {:scenic_driver_nerves_rpi, "0.10.0", targets: :rpi3}
+      {:scenic_layout_o_matic, "0.5.0"},
+      {:scenic_driver_nerves_rpi, "0.10.1", targets: :rpi3}
     ]
   end
 end

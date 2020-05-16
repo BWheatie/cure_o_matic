@@ -18,4 +18,9 @@ defmodule CureOMatic.Sensor do
         {:error, error}
     end
   end
+
+  def handle_call(:sensor_reading, _, state) do
+    listen()
+    {:reply, state}
+  end
 end
